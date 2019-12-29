@@ -6,7 +6,7 @@ def is_prime(n)
 
   return false if n % 2 == 0
 
-  for i in 3..Math.sqrt(n)
+  3.step(Math.sqrt(n), 2) do |i|
     return false if n % i == 0
   end
 
