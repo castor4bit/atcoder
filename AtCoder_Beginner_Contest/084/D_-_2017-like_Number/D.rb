@@ -12,12 +12,11 @@ def is_prime(n)
   return true if n == 2
   return false if n.even?
 
-  num = n
-  (3..Math.sqrt(n)).each do |i|
-    num /= i if num % i == 0
+  3.step(Math.sqrt(n), 2) do |i|
+    return false if n % i == 0
   end
 
-  [1, n].include?(num)
+  true
 end
 
 p = Array.new(rmax + 1, 0)
