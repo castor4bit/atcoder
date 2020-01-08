@@ -27,7 +27,7 @@ end
 a = Array.new(rmax + 1, 0)
 (0..a.size).each do |i|
   a[i + 1] = a[i]
-  a[i + 1] += 1 if is_prime(i + 1) && is_prime((i + 2) / 2)
+  a[i + 1] += 1 if p[i + 1] && p[(i + 2) / 2]
 end
 
 lr.each do |_lr|
