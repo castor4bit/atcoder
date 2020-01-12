@@ -1,13 +1,13 @@
 h, w = gets.split(" ").map(&:to_i)
 map = Array.new(h)
 h.times do |i|
-  map[i] = gets.chomp.chars
+  map[i] = gets.chomp
 end
 
 def bfs(map, sx, sy)
   visited = Hash.new
   queue = []
-  hop = []
+  max = 0
 
   return 0 if map[sy][sx] == '#'
 
@@ -40,11 +40,11 @@ def bfs(map, sx, sy)
       next if map[ny][nx] == '#'
 
       queue.push([nx, ny, step + 1])
-      hop.push(step + 1)
+      max = step + 1
     end
   end
 
-  hop.max
+  max
 end
 
 result = 0
